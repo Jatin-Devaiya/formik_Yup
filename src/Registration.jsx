@@ -13,7 +13,7 @@ import { SignUpSchema } from "./Schemas";
 // };
 
 const Registration = () => {
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit,resetForm } =
     useFormik({
       //   initialValues: initialValues,
       initialValues: {
@@ -32,6 +32,9 @@ const Registration = () => {
       },
     });
 
+    // const handleReset = () => {
+    //   resetForm(); // This will reset the formik form to its initial state
+    // };
   //   console.log(errors)
 
   return (
@@ -116,6 +119,9 @@ const Registration = () => {
 
         <button type="submit" className="btn btn-primary">
           Submit
+        </button>
+        <button type="button" className="btn btn-primary" onClick={()=>{resetForm()}}>
+          Reset
         </button>
       </form>
     </>

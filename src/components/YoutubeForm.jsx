@@ -32,6 +32,7 @@ const validationSchema = Yup.object({
   name: Yup.string().min(2).max(25).required("Required!!!"),
   email: Yup.string().email("Invalid Email Format...").required("Required!!!"),
   channel: Yup.string().required("Required!!!"),
+  address:Yup.string().required("Required!!!"),
 });
 
 const validateComments = (value) => {
@@ -113,7 +114,7 @@ const YoutubeForm = () => {
                 className="form-control"
                 validate={validateComments}
               />
-              <ErrorMessage name="channel" component={Error} />
+              <ErrorMessage name="comments" component={Error} />
             </div>
 
             <div className="mb-3">
@@ -134,13 +135,14 @@ const YoutubeForm = () => {
                         {...field}
                         className="form-control"
                       />
-                      {meta.touched && meta.error ? (
-                        <div>{meta.error}</div>
-                      ) : null}
+                      {/* {meta.touched && meta.error ? (
+                        <div >{meta.error}</div>
+                      ) : null} */}
                     </div>
                   );
                 }}
               </FastField>
+              <ErrorMessage name="address" component={Error} />
             </div>
 
             <div className="mb-3">
@@ -258,7 +260,7 @@ const YoutubeForm = () => {
 
             <button
               type="submit"
-              disabled={!formik.isValid}
+              // disabled={!formik.isValid}
               className="btn btn-primary"
             >
               Submit

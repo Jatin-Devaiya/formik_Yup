@@ -4,7 +4,7 @@ import YoutubeForm from "./components/YoutubeForm";
 function App() {
   return (
     <>
-      {/* <Registration /> */}
+      <Registration />
       <YoutubeForm/>
     </>
   );
